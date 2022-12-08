@@ -48,15 +48,21 @@ print(state_of_piles)
 for action in actions:
     move, _from, _to = action
     print(f"{move}, {_from}, {_to}")
+    to_move = []
     for _ in range(0,move):
         a = piles[_from-1].popleft()
         print(f"moving {a} from {_from} to {_to}")
+        to_move.append(a)
+
+    to_move.reverse()
+    for a in to_move:
         piles[_to-1].appendleft(a)
         state_of_piles = [pile for pile in piles]
-        print(f"current: {state_of_piles}")       
+    print(f"current: {state_of_piles}")       
 
 state_of_piles = [pile for pile in piles]
 print(state_of_piles)
+
 
 
 print(actions)
