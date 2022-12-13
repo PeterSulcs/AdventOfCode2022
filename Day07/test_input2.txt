@@ -1,0 +1,20 @@
+$ cd /
+$ ls
+1 a.txt
+2 b.txt
+dir a
+dir b
+$ cd a
+$ ls
+3 c.txt
+dir d
+$ cd ..
+$ cd b
+$ ls
+5 d
+$ cd ..
+$ cd a
+$ cd d
+$ ls
+dir z
+7 e.txt
