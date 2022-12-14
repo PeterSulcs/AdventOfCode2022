@@ -34,3 +34,20 @@ for n in [20,60,100,140,180,220]:
     total += n * cycles[n]
 
 print(f"total: {total}")
+
+rows = list()
+c = 0
+for n in range(1,7):
+    row = list()
+    for m in range(0,40):
+        c += 1
+        X = cycles[c]
+        print(f"cycle {c}, {X}, {m}")
+        if abs(X - m)<=1: 
+            row.append("#")
+        else:
+            row.append(" ")
+    rows.append(row)
+
+for row in rows:
+    print("".join(row))
