@@ -57,7 +57,9 @@ print(dirs)
 
 total = 0
 final_file_count = 0
+sizes = list()
 for k,v in dirs.items():
+    sizes.append(v["size"])
     for f in v["files"]:
         final_file_count +=1
     if v["size"] <= 100_000:
@@ -67,5 +69,7 @@ for k,v in dirs.items():
         print(f'-{v["size"]}\t{v["path"]}')
 
 print(total)
-
+needed = 30000000- (70000000 - dirs["/"]["size"])
 print(f"{file_count} vs. {final_file_count}")
+
+print([x for x in sorted(sizes) if x > needed][0])
