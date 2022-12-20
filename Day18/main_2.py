@@ -75,7 +75,6 @@ def is_external(side: face, collection: Set[face], the_bounds: bounds) -> bool:
     test_point = side.extend()
     # print(f"is_external: test_point: {test_point}")
     while the_bounds.within(test_point):
-        test_point = test_point.extend()
         # print(f"is_external extending...: test_point: {test_point}")
         if test_point in collection:
             print(f" is_external: side: {side}")
@@ -87,6 +86,7 @@ def is_external(side: face, collection: Set[face], the_bounds: bounds) -> bool:
                         return False
                     else:
                         return True  # desperation
+        test_point = test_point.extend()
     # print(f" hit bounds...")
     return True
 
